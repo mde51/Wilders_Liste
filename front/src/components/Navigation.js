@@ -68,6 +68,15 @@ class Navigation extends Component {
                   Effacer
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink
+                  tag={RouterNavLink}
+                  activeClassName="active"
+                  to="/Modification"
+                >
+                  Modification
+                </NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

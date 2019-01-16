@@ -9,6 +9,7 @@ import Profile from './components/Profile';
 import Liste from './components/listeWilders/Liste';
 import Recherche from './components/recherche/Liste';
 import Delete from './components/delete/Liste';
+import Modification from './components/modification/Liste';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
           <Route path="/profile" component={ Profile }></Route>
           <Route path="/signin" component={ SignIn }></Route>
           <Route path="/delete" component={ Delete }></Route>
+          <Route path="/modification" component={ Modification }></Route>
         </Switch>
       </div>
     );
