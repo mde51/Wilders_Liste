@@ -7,6 +7,9 @@ const app  =  express();
 // je configure les routes
 const signupRouter = require('./routes/auth/signup.js');
 const rechercheRouter = require('./routes/auth/recherche.js');
+const deleteRouter = require('./routes/auth/delete.js');
+const modificationRouter = require('./routes/auth/modification.js');
+
 
 const cors = require("cors");
 
@@ -19,6 +22,9 @@ app.use(express.static(__dirname  +  '/public'));
 // je configure les routes
 app.use('/auth', signupRouter);
 app.use('/auth', rechercheRouter);
+app.use('/auth', deleteRouter);
+app.use('/auth', modificationRouter);
+
 
  // j'implémente la partie API
 app.get("/", (req,res) => {
