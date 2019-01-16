@@ -69,6 +69,22 @@ app.delete("/delete/:id", (req, res) => {
   );
 });
 
+app.put("/modification/:id", (req, res) => {
+  const formData = req.body;
+  const id = req.params.id;
+  connection.query(
+    "UPDATE FROM users WHERE email = ?",
+    [formData, id],
+    (err, results) => {
+      if (err) {
+        res.status(500).send("Erreur lors de la modification");
+      } else {
+        res.sendStatus(200);
+      }
+    }
+  );
+});
+
 /// dans le cas d'une route non trouvée, je retourne le code 404 'Not Found'
 app.use(function(req, res, next) {
   var  err  =  new  Error('Not Found');
