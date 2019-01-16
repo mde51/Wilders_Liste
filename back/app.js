@@ -4,6 +4,7 @@ const connection = require("./helpers/db.js");
 const bodyParser  =  require('body-parser');
 const morgan  =  require('morgan');
 const app  =  express();
+
 // je configure les routes
 const signupRouter = require('./routes/auth/signup.js');
 const rechercheRouter = require('./routes/auth/recherche.js');
