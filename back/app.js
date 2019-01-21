@@ -34,7 +34,7 @@ app.use(cors());
 
 // route liste des users
 app.get("/liste", (req, res) => {
-  connection.query("SELECT * FROM users ORDER BY name ASC ", (err, results) => {
+  connection.query("SELECT * FROM users ORDER BY lastname ASC ", (err, results) => {
     if (err) {
       res.status(500).send("Erreur lors de la récupération de la personnes");
     } else {
