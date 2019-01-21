@@ -6,7 +6,7 @@ const Liste3 = props => {
     
     <Container>
       
-      <Row className="rounded p-1 bg-secondary text-white">
+      <Row className="rounded p-1 bg-light border border-info text-info">
         <Col>{props.wilder.name}</Col>
         <Col>{props.wilder.lastname}</Col>
         <Col>{props.wilder.email}</Col>

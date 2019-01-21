@@ -21,7 +21,7 @@ class Liste extends Component {
         <Row>
           <Col className="d-flex justify-content-center mt-5">
             <div className="text-center">
-              <h4 className="text-secondary font-weight-bold mt-5">
+              <h4 className="text-info font-weight-bold">
                 LISTE DES WILDERS
               </h4>
               <Liste2 wilders={this.state.wilders} />

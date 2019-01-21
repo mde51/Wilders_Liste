@@ -3,7 +3,6 @@ import {
   Button,
   Form,
   FormGroup,
-  Label,
   Input,
   Container,
   Col,
@@ -27,14 +26,7 @@ class SignUp extends Component {
     this.updateEmail = this.updateEmail.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  reset() {
-    this.setState({
-      name: "",
-      lastname: "",
-      email: "",
-      passeword: ""
-    });
-  }
+
   updateName(event) {
     this.setState({
       name: event.target.value
@@ -55,6 +47,7 @@ class SignUp extends Component {
       email: event.target.value
     });
   }
+
   handleSubmit = event => {
     console.log(JSON.stringify(this.state));
     event.preventDefault();
@@ -76,24 +69,35 @@ class SignUp extends Component {
       });
   };
 
+  reset() {
+    this.setState({
+      name: "",
+      lastname: "",
+      email: "",
+      password: ""
+    });
+  }
+
   render() {
     return (
-      <Container className="shadow-sm p-1 mt-5 bg-light rounded">
+      <Container className="shadow-sm mt-5 bg-light rounded p-5 border border-info ">
         <Row>
           <Col lg="6" md="6" sm="12">
             <img
               src="https://pbs.twimg.com/media/DwohpZQWkAEyHKS.jpg"
               alt="wcs"
               style={{ width: "25em" }}
-              className="text-center mx-auto d-block mt-5"
+              className="text-center mx-auto d-block mt-4 mb-4 border border-info"
             />
           </Col>
-          <Col lg="6" md="6" sm="12">
+          <Col lg="6" md="6" sm="12" >
             <Form onSubmit={this.handleSubmit}>
-              <h2 className="text-secondary font-weight-bold ">S'inscrire</h2>
+              <h2 className="text-info text-center font-weight-bold mt-3 mb-2 ">
+               Inscrire un Wilder
+              </h2>
               <FormGroup>
-                <Label for="email">Email</Label>
                 <Input
+                  className="rounded p-1 bg-light border border-info text-info"
                   onChange={this.updateEmail}
                   value={this.state.email}
                   type="email"
@@ -103,19 +107,19 @@ class SignUp extends Component {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="examplePassword">Password</Label>
                 <Input
+                  className="rounded p-1 bg-light border border-info text-info"
                   onChange={this.updatePassWord}
-                  value={this.state.passeword}
+                  value={this.state.password}
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="monPassw0rd"
+                  placeholder="monPassword"
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="name">name</Label>
                 <Input
+                  className="rounded p-1 bg-light border border-info text-info"
                   onChange={this.updateName}
                   value={this.state.name}
                   type="text"
@@ -125,8 +129,8 @@ class SignUp extends Component {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="lastname">lastname</Label>
                 <Input
+                  className="rounded p-1 bg-light border border-info text-info"
                   onChange={this.updateLastName}
                   value={this.state.lastName}
                   type="text"
@@ -136,7 +140,7 @@ class SignUp extends Component {
                 />
               </FormGroup>
               <Button
-                className="btn bg-primary float-right"
+                className="btn bg-info mb-2 float-right"
                 type="submit"
                 value="submit"
               >

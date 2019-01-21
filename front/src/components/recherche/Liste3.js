@@ -3,10 +3,8 @@ import { Container, Col, Row } from "reactstrap";
 
 const Liste3 = props => {
   return (
-    
     <Container>
-      
-      <Row className="rounded p-1 bg-secondary text-white">
+      <Row className="rounded p-1 bg-light border border-info text-info">
         <Col>{props.name}</Col>
         <Col>{props.lastname}</Col>
         <Col>{props.email}</Col>

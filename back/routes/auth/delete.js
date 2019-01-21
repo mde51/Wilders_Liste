@@ -7,7 +7,7 @@ router.delete("/delete", (req, res) => {
     if (err) {
       res.status(500).send("Erreur lors de la suppression de l'users");
     } else {
-      res.json(results);
+      res.status(200).json({ flash: "l'enregistrement de votre Wilder est effacé  !" });
     }
   });
 });

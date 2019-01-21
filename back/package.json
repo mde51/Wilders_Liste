@@ -4,7 +4,7 @@
     "description": "serveur de la Wild",
     "main": "app.js",
     "scripts": {
-        "start": "node_modules/nodemon/bin/nodemon.js index"
+        "start": "node_modules/nodemon/bin/nodemon.js app.js"
     },
     "author": "wilder",
     "dependencies": {

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {
   FormGroup,
-  Label,
   Input,
   Container,
   Col,
@@ -43,9 +42,8 @@ class Liste extends Component {
         <Row>
           <Col>
             <Form onSubmit={this.handleSubmit}>
-              <h2 className="text-secondary font-weight-bold mt-5" >Rechercher un Wilder par son email</h2>
-              <FormGroup className="text-secondary font-weight-bold ">
-                <Label for="email">Email</Label>
+              <h2 className="text-info text-center font-weight-bold mt-5" >Rechercher un Wilder par son email</h2>
+              <FormGroup className="text-info font-weight-bold ">
                 <Input
                   onChange={event => this.handleEmail(event)}
                   value={this.state.email}
@@ -57,7 +55,7 @@ class Liste extends Component {
               </FormGroup>
               {/* button avec evenement sur recherche mail */}
               <Button
-                className="btn bg-primary float-right"
+                className="btn bg-info float-right"
                 onClick={e => this.rechercheMail(e)}
                 type="submit"
                 value="submit"
@@ -71,7 +69,7 @@ class Liste extends Component {
               <Row>
                 <Col className="d-flex justify-content-center mt-5">
                   <div className="text-center ">
-                    <h4 className="text-secondary font-weight-bold">
+                    <h4 className="rounded p-1 bg-light border border-info text-info">
                       Fiche du Wilder
                     </h4>
                     <Liste2 liste={this.state.liste} />
@@ -85,7 +83,7 @@ class Liste extends Component {
                     src="https://pbs.twimg.com/media/DwohpZQWkAEyHKS.jpg"
                     alt="wcs"
                     style={{ width: "25em" }}
-                    className="text-center mx-auto d-block mt-5"
+                    className="text-center mx-auto d-block mt-5 border border-inf"
                   />
                 </Col>
               </Row>

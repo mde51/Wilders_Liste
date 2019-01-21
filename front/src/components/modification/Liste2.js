@@ -5,7 +5,7 @@ import Liste3 from "./Liste3";
 const Liste2 = props => {
   return (
     <Container>
-      <Row className="rounded p-1 bg-info text-white">
+      <Row className="rounded p-1 bg-info border border-info text-white">
         <Col>Nom</Col>
         <Col>Prénom</Col>
         <Col>email</Col>
