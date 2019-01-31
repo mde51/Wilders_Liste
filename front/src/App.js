@@ -3,13 +3,11 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/Navigation';
 import SignUp from './components/SignUp';
-import SignIn from './components/SignIn';
 import Home from './components/Home';
-import Profile from './components/Profile';
-import Liste from './components/listeWilders/Liste';
-import Recherche from './components/recherche/Liste';
-import Delete from './components/delete/Liste';
-import Modification from './components/modification/Liste';
+import Liste from './components/listeWilders/FormWilders';
+import Recherche from './components/recherche/FormRecherche';
+import Delete from './components/delete/FormDelete';
+import Modification from './components/modification/FormModifWilders';
 
 class App extends Component {
   render() {
@@ -21,8 +19,6 @@ class App extends Component {
           <Route path="/signup" component={ SignUp }></Route>
           <Route path="/liste" component={ Liste }></Route>
           <Route path="/recherche" component={ Recherche}></Route>
-          <Route path="/profile" component={ Profile }></Route>
-          <Route path="/signin" component={ SignIn }></Route>
           <Route path="/delete" component={ Delete }></Route>
           <Route path="/modification" component={ Modification }></Route>
         </Switch>

@@ -78,15 +78,13 @@ app.delete("/delete/:id", (req, res) => {
 
 // route modification users par email
 
-app.put("/modification/:id", (req, res) => {
-  const formData = req.params.id;
-  const post = req.body.email;
-
+app.post("/modification/:id", (req, res) => {
   connection.query(
-    "UPDATE users SET email = ?, name = ?, lastname = ?, password = ?  WHERE email = ?",
-    [req.body.email,req.body.name,req.body.lastname,req.body.password, formData],
+    `UPDATE users SET ? WHERE email = "${req.params.id}"`,
+    {email: req.body.email,name: req.body.name,lastname: req.body.lastname,password: req.body.password},
     (err, results) => {
       if (err) {
+        console.log(err)
         res.status(500).send("Erreur lors de la modification");
       } else {
         res.sendStatus(200);

@@ -1,11 +1,9 @@
 import React from "react";
 import { Container, Col, Row } from "reactstrap";
 
-const Liste3 = props => {
+const ListeDeleteWilders = props => {
   return (
-    
     <Container>
-      
       <Row className="rounded p-1 bg-light border border-info text-info">
         <Col>{props.name}</Col>
         <Col>{props.lastname}</Col>
@@ -14,4 +12,4 @@ const Liste3 = props => {
     </Container>
   );
 };
-export default Liste3;
+export default ListeDeleteWilders;

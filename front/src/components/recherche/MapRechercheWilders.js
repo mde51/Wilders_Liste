@@ -1,20 +1,20 @@
 import React from "react";
 import { Container, Col, Row } from "reactstrap";
-import Liste3 from "./Liste3";
+import ListeRechercheWilders from "./ListeRechercheWilders";
 
-const Liste2 = props => {
+const MapRechercheWilders = props => {
   return (
     <Container>
-      <Row className="rounded p-1 bg-info border border-info text-white">
+      <Row className="rounded p-1 bg-info text-white">
         <Col>Nom</Col>
         <Col>Prénom</Col>
         <Col>email</Col>
         {props.liste
           .map((liste, index) => (
-            <Liste3 {...liste} />
+            <ListeRechercheWilders {...liste} />
           ))}
       </Row>
     </Container>
   );
 };
-export default Liste2;
+export default MapRechercheWilders;

@@ -1,20 +1,19 @@
 import React from "react";
 import { Container, Col, Row } from "reactstrap";
-import Liste3 from "./Liste3";
+import ListingWilders from "./ListingWilders";
 
-const Liste2 = props => {
+const MapWilders = props => {
   return (
     <Container>
       <Row className="rounded p-1 bg-info text-white">
         <Col>Nom</Col>
         <Col>Prénom</Col>
         <Col>email</Col>
-        {props.liste
-          .map((liste, index) => (
-            <Liste3 {...liste} />
-          ))}
+        {props.wilders.map((wilder, index) => (
+          <ListingWilders wilder={wilder} key={index} />
+        ))}
       </Row>
     </Container>
   );
 };
-export default Liste2;
+export default MapWilders;

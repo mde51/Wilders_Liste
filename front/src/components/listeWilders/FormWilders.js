@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Container, Col, Row } from "reactstrap";
 import axios from "axios";
-import Liste2 from "./Liste2";
+import MapWilders from "./MapWilders";
 
-class Liste extends Component {
+class FormWilders extends Component {
   constructor(props) {
     super(props);
     this.state = { wilders: [] };
@@ -21,10 +21,8 @@ class Liste extends Component {
         <Row>
           <Col className="d-flex justify-content-center mt-5">
             <div className="text-center">
-              <h4 className="text-info font-weight-bold">
-                LISTE DES WILDERS
-              </h4>
-              <Liste2 wilders={this.state.wilders} />
+              <h4 className="text-info font-weight-bold">LISTE DES WILDERS</h4>
+              <MapWilders wilders={this.state.wilders} />
             </div>
           </Col>
         </Row>
@@ -33,4 +31,4 @@ class Liste extends Component {
   }
 }
 
-export default Liste;
+export default FormWilders;

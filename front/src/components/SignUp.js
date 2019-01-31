@@ -103,7 +103,7 @@ class SignUp extends Component {
                   type="email"
                   name="email"
                   id="exampleEmail"
-                  placeholder="mon@email.com"
+                  placeholder="Son Email"
                 />
               </FormGroup>
               <FormGroup>
@@ -113,8 +113,8 @@ class SignUp extends Component {
                   value={this.state.password}
                   type="password"
                   name="password"
-                  id="password"
-                  placeholder="monPassword"
+                  id="Exemplepassword"
+                  placeholder="Son Password"
                 />
               </FormGroup>
               <FormGroup>
@@ -124,19 +124,19 @@ class SignUp extends Component {
                   value={this.state.name}
                   type="text"
                   name="name"
-                  id="name"
-                  placeholder="James"
+                  id="Exemplename"
+                  placeholder="Son Prénom"
                 />
               </FormGroup>
               <FormGroup>
                 <Input
                   className="rounded p-1 bg-light border border-info text-info"
                   onChange={this.updateLastName}
-                  value={this.state.lastName}
+                  value={this.state.lastname}
                   type="text"
                   name="lastname"
-                  id="lastname"
-                  placeholder="Bond"
+                  id="Exemplelastname"
+                  placeholder="Son Nom de Famille"
                 />
               </FormGroup>
               <Button

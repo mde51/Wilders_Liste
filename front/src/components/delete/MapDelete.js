@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Col, Row } from "reactstrap";
-import Liste3 from "./Liste3";
+import ListeDeleteWilders from "./ListeDeleteWilders";
 
-const Liste2 = props => {
+const MapDelete = props => {
   return (
     <Container>
       <Row className="rounded p-1 bg-info text-white">
@@ -11,10 +11,10 @@ const Liste2 = props => {
         <Col>email</Col>
         {props.liste
           .map((liste, index) => (
-            <Liste3 {...liste} />
+            <ListeDeleteWilders {...liste} />
           ))}
       </Row>
     </Container>
   );
 };
-export default Liste2;
+export default MapDelete;

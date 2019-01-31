@@ -8,25 +8,15 @@ import {
   Form,
   Button
 } from "reactstrap";
-import axios from "axios";
-import Liste2 from "./Liste2";
-import { ToastContainer, ToastStore } from "react-toasts";
 
-class Liste extends Component {
+import axios from "axios";
+import MapRechercheWilders from "./MapRechercheWilders";
+
+class FormRecherche extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      email: "",
-      password: "",
-      name: "",
-      lastname: "",
-      flash: "",
-      wilders: [],
-      liste: [],
-      delete: []
-    };
+    this.state = { wilders: [], email: "", liste: [] };
   }
-
   componentDidMount() {
     axios.get("http://localhost:5000/liste").then(response => {
       console.log(response.data);
@@ -41,48 +31,11 @@ class Liste extends Component {
       this.setState({ liste: response.data });
     });
   }
-  // recherche des users via l'api par mail pour le supprimer
-  deleteMail(e) {
-    e.preventDefault();
-    axios.delete(`/delete/${this.state.email}`).then(response => {
-      this.setState({ delete: response.data });
-    });
-  }
-
   // entrer le mail  dans le state via l'input
   handleEmail(event) {
     this.setState({ email: event.target.value });
   }
 
-  handleSubmit = event => {
-    console.log(JSON.stringify(this.state));
-    event.preventDefault();
-    fetch("/auth/delete", {
-      method: "POST",
-      headers: new Headers({
-        "Content-Type": "application/json"
-      }),
-      body: JSON.stringify(this.state)
-    })
-      .then(res => res.json())
-      .then(
-        res => this.setState({ flash: res.flash }),
-        err => this.setState({ flash: err.flash })
-      )
-      .then(() => {
-        ToastStore.info(JSON.stringify(this.state.flash));
-        this.reset();
-      });
-  };
-
-  reset() {
-    this.setState({
-      name: "",
-      lastname: "",
-      email: "",
-      password: ""
-    });
-  }
   render() {
     return (
       <Container>
@@ -90,16 +43,16 @@ class Liste extends Component {
           <Col>
             <Form onSubmit={this.handleSubmit}>
               <h2 className="text-info text-center font-weight-bold mt-5">
-                Rechercher un Wilder par son email pour le supprimer
+                Rechercher un Wilder par son email
               </h2>
-              <FormGroup>
+              <FormGroup className="text-info font-weight-bold ">
                 <Input
                   onChange={event => this.handleEmail(event)}
                   value={this.state.email}
                   type="email"
                   name="email"
                   id="exampleEmail"
-                  placeholder="mon@email.com"
+                  placeholder="Email"
                 />
               </FormGroup>
               {/* button avec evenement sur recherche mail */}
@@ -113,7 +66,7 @@ class Liste extends Component {
               </Button>
             </Form>
 
-            {/* {this.state.morning?<Page2/>:<Page3/>} */}
+            {/* Conditionnal rendering*/}
             {this.state.email ? (
               <Row>
                 <Col className="d-flex justify-content-center mt-5">
@@ -121,15 +74,7 @@ class Liste extends Component {
                     <h4 className="rounded p-1 bg-light border border-info text-info">
                       Fiche du Wilder
                     </h4>
-                    <Liste2 liste={this.state.liste} />
-                    <Button
-                      className="btn bg-info float-right mt-2"
-                      onClick={e => this.deleteMail(e)}
-                      type="submit"
-                      value="submit"
-                    >
-                      Pour supprimer le Wilder Valider !!!
-                    </Button>
+                    <MapRechercheWilders liste={this.state.liste} />
                   </div>
                 </Col>
               </Row>
@@ -147,10 +92,9 @@ class Liste extends Component {
             )}
           </Col>
         </Row>
-        <ToastContainer store={ToastStore} />
       </Container>
     );
   }
 }
 
-export default Liste;
+export default FormRecherche;
